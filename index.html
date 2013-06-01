@@ -27,7 +27,13 @@
     </div>
     <script type="text/javascript">
       $("#legSearchBtn").click(function() {
-        search();
+        startSearch();
+      });
+
+      $("#legSearch").keypress(function(e) {
+        if(e.which == 13) {
+          startSearch();
+        }
       });
     </script>
   </body>
