@@ -40,13 +40,15 @@ function displayResults(){
         .key(function(d) {return d.session;})
         .entries(results);
 
-    resultsDiv.selectAll("div")
+    var headDiv = resultsDiv.selectAll("div")
 		.data(results)
 		.enter()
 		.append("div")
+		.attr("id", function(d){return "session" + d.key;});
+
+		headDiv.append("div")
 		.classed("sessionHead", true)
-		.attr("id", function(d){return "session" + d.key;})
-		.on("click", function(d){toggleHeader("session" + d.key);})
+		.on("click", function(d){toggleHeader("session" + d.session);})
 		.text(function(d){return "Session: " + d.key + " (" + d.values.length + " results)";});
 
 	for (var i = 0; i < results.length; i++) {
