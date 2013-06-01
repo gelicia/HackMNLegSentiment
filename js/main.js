@@ -47,7 +47,7 @@ function displayResults(){
 		.classed("sessionHead", true)
 		.attr("id", function(d){return "session" + d.key;})
 		.on("click", function(d){toggleHeader("session" + d.key);})
-		.text(function(d){return "+ Session: " + d.key + " (" + d.values.length + " results)";});
+		.text(function(d){return "Session: " + d.key + " (" + d.values.length + " results)";});
 
 	for (var i = 0; i < results.length; i++) {
 		var parentDiv = d3.select("#session" + results[i].key);
@@ -58,15 +58,20 @@ function displayResults(){
 		.append("div")
 		.attr("id", function(d,i){return "session" + d.session + "-" + i ;})
 		.classed("result", true)
+		.classed("hide", true)
 		.text(function(d){return d.title;});
 	}
-
-    console.log(results);
 
 	def.resolve();
 	return def.promise();
 }
 
 function toggleHeader(header){
-	$("div[id^='" + header + "']").show();
+	var headers = $("div[id^='" + header + "-']");
+	if (headers.hasClass('hide')){
+		headers.removeClass('hide');
+	}
+	else {
+		headers.addClass('hide');
+	}
 }

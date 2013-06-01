@@ -68,6 +68,9 @@ background-color: #f9c;
 .result {
 	font-weight: normal;
 	font-size: 12px;
-	padding-left: 5px;
+	padding: 5px;
+}
+
+.hide {
 	display: none;
 }
