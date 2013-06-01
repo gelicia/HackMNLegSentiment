@@ -1,5 +1,5 @@
 body {
-  background-color: #96C809;
+  background-color: steelblue;
   font-size: 13px;
   font-family: Arial, SunSans-Regular, Sans-Serif;
   color:#000;  
@@ -11,12 +11,11 @@ a {
 color: #ff66cc;
 text-decoration: none; 
 }
- 
+
 
 h1 {
 font-size: 16px;
-text-transform:uppercase;
-color: #000;
+color: #fff;
 background-color: #000;
 padding:5px 15px;
 margin:0px
@@ -52,4 +51,10 @@ position: absolute;
 right: 0;        
 width: 220px;
 background-color: #f9c;
+}
+
+.label{
+	display:inline;
+	font-weight: bold;
+	margin-right: 0px;
 }
